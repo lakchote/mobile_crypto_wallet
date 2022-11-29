@@ -61,12 +61,12 @@ export const ImportSeed = ({ navigation }: ImportSeedProps) => {
       <View style={styles.termsAndConditions}>
         <Text style={styles.colorWhite}>
           <Text>By proceeding, you agree to these</Text>
-          <Text style={styles.termsAndConditionsText}>Term and Conditions.</Text>
+          <Text style={styles.termsAndConditionsText}> Term and Conditions.</Text>
         </Text>
       </View>
       <View>
         {isButtonDisabled ? (
-          <Pressable style={[styles.button, styles.buttonMarginBottom, styles.buttonDisabled]} onPress={onImportSeed}>
+          <Pressable style={[styles.button, styles.buttonMarginBottom, styles.buttonDisabled]}>
             <Text style={styles.text}>Import</Text>
           </Pressable>
         ) : (
