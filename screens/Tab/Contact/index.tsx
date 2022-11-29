@@ -21,6 +21,13 @@ export default function Contact() {
     AsyncStorage.getItem("contact_label").then((value) => setContactLabel(value))
   }
 
+  const onClear = () => {
+    setContactLabel(null)
+    setContactAddress(null)
+    AsyncStorage.removeItem("contact_address")
+    AsyncStorage.removeItem("contact_label")
+  }
+
   const onAccountAddressChange = (val: string) => {
     setAccountAddress(val)
   }
@@ -50,12 +57,15 @@ export default function Contact() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.textContainer}>
-        <Text style={styles.textColor}>Your contact</Text>
+        <Text style={[styles.text, styles.textColor, styles.marginBottom5]}>Your contact</Text>
         {!contactLabel && <Text style={styles.text}>You don't have any contact yet ! Add the one below:</Text>}
         {contactLabel && (
-          <View style={styles.paddingBottom5}>
+          <View>
             <Text style={styles.text}>{contactLabel}</Text>
-            <Text style={styles.text}>{contactAddress}</Text>
+            <Text style={[styles.text, styles.marginBottom5]}>{contactAddress}</Text>
+            <Text style={[styles.text, styles.textRed]} onPress={() => onClear()}>
+              <Text>Clear</Text>
+            </Text>
           </View>
         )}
       </View>

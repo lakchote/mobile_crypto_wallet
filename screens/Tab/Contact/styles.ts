@@ -3,6 +3,7 @@ import theme from "../../../styles/theme"
 
 const textAlignCenter = "center"
 const textColor = "#5F97FF"
+const textRed = "red"
 
 const btnBackgroundColor = "#202832"
 const btnBorderRadius = 168
@@ -59,6 +60,9 @@ export default StyleSheet.create({
     paddingBottom: 66,
     position: "relative",
   },
+  marginBottom5: {
+    marginBottom: "5%",
+  },
   paddingBottom5: {
     paddingBottom: 5,
   },
@@ -89,5 +93,8 @@ export default StyleSheet.create({
     paddingLeft: textInputPaddingLeft,
     paddingTop: textInputPaddingTop,
     width: textInputWidth,
+  },
+  textRed: {
+    color: textRed,
   },
 })
