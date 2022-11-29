@@ -37,8 +37,8 @@ export default function Contact() {
   }
 
   React.useEffect(() => {
-    getContactAddress
-    getContactLabel
+    getContactAddress()
+    getContactLabel()
   }, [])
 
   React.useEffect(() => {

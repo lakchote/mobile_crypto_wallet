@@ -6,7 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import axios from "axios"
 import { POLKADOT_PROXY_GET_BALANCE_ENDPOINT } from "@env"
 
-export default function TabOneScreen() {
+export default function Home() {
   const [accountAddress, setAccountAddress] = React.useState<string | null>(null)
   const [accountBalance, setAccountBalance] = React.useState<string | null>(null)
   const getAccountAddress = () => {
@@ -18,6 +18,7 @@ export default function TabOneScreen() {
       .get(POLKADOT_PROXY_GET_BALANCE_ENDPOINT)
       .then((res) => {
         setAccountBalance(res.data)
+        AsyncStorage.setItem("account_balance", res.data)
       })
       .catch((error) => {
         console.error(error)
@@ -37,7 +38,7 @@ export default function TabOneScreen() {
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.textColor}>Balance :</Text>
-        <Text style={styles.text}>{accountBalance} WND (DOT for tesnet)</Text>
+        <Text style={styles.text}>{accountBalance} WND (DOT for testnet)</Text>
       </View>
     </SafeAreaView>
   )
