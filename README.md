@@ -2,6 +2,9 @@
 
 The goal was to create a simple cryptocurrency wallet application working with polkadot tesnet.
 
+<img src="./assets/readme/1.png" alt="Intro Screen 1" height=300>
+<img src="./assets/readme/2.png" alt="Intro Screen 1" height=300>
+
 ## Implementation
 
 There were some technical implementations.
@@ -33,7 +36,7 @@ Unfortunately, it isn't supported right now on React Native Web, that's why you 
 
 ## How to run
 
-1. Launch ngrok with your [node backend](https://github.com/lakchote/node_polkadot) port
+1. Launch ngrok with your [node backend](https://github.com/lakchote/node_polkadot) already listening on port
 
 `ngrok 1337`
 
