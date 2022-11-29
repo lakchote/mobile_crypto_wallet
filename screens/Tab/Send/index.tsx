@@ -49,6 +49,7 @@ export default function Send() {
   }
 
   const onSend = () => {
+    setTxHash(null)
     if (accountBalance && amount && accountBalance.replace(/,/g, "") <= amount) {
       setIsErrorBalance(true)
       return
@@ -57,7 +58,6 @@ export default function Send() {
     }
 
     setIsLoading(true)
-    console.log(POLKADOT_PROXY_SEND_ENDPOINT)
     axios
       .post(POLKADOT_PROXY_SEND_ENDPOINT, {
         recipient: walletAddress,
@@ -128,7 +128,7 @@ export default function Send() {
       </View>
       {isLoading && (
         <View>
-          <Text style={styles.text}>Loading...</Text>
+          <Text style={styles.text}>Sending...</Text>
         </View>
       )}
       {isError && (
